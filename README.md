@@ -94,3 +94,10 @@ This dedicated repository records X7 behaviour and current source files.
 - WirePlumber ALSA suspend policy: https://pipewire.pages.freedesktop.org/wireplumber/daemon/configuration/alsa.html
 - X7 native USB protocol reference: https://github.com/alcatron/mb-x7-control/blob/main/PROTOCOL.md
 - Shairport Sync: https://github.com/mikebrady/shairport-sync
+
+### Homebridge EQ controls removed
+
+2026-10-16: user prefers existing X7 sound settings. Flat/Night/Speech HomeKit
+preset tiles are disabled and removed on Gallery; volume/mute remains.
+Software EQ remains neutral0/0/0dB. This change does not write native X7 EQ/SBX.
+The earlier software EQ installation/test was restored to Flat before this change.
