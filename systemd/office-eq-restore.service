@@ -1,0 +1,13 @@
+[Unit]
+Description=Restore Office equalizer settings
+After=pipewire.service
+Requires=pipewire.service
+PartOf=pipewire.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/office-eq restore
+RemainAfterExit=yes
+
+[Install]
+WantedBy=pipewire.service

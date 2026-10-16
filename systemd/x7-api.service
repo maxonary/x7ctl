@@ -1,0 +1,20 @@
+[Unit]
+Description=Sound Blaster X7 speaker control API
+After=network.target sound.target
+
+[Service]
+User=pi
+SupplementaryGroups=audio
+EnvironmentFile=/etc/x7-api.env
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+ReadWritePaths=/var/lib/office-audio
+ExecStart=/usr/bin/python3 /opt/pi-home-audio/scripts/x7-api.py
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=read-only
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target
