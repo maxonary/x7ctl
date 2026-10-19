@@ -125,3 +125,12 @@ This dedicated repository records X7 behaviour and current source files.
 preset tiles are disabled and removed on Gallery; volume/mute remains.
 Software EQ remains neutral0/0/0dB. This change does not write native X7 EQ/SBX.
 The earlier software EQ installation/test was restored to Flat before this change.
+
+## Local HomeKit bridge — 2026-10-19
+
+Office hosts its own Homebridge at `http://192.168.2.132:8581` and an
+`Office X7 Controls` child bridge. The Pi Home Audio plugin calls this Pi's
+X7 API via loopback (`127.0.0.1:8100`), so Gallery is no longer required for the
+new control. Native volume/mute API read and same-value write were verified
+while Gallery was offline. Pair the child once using its Homebridge UI QR code.
+The old Gallery-hosted X7 tile still needs retiring after Gallery is reachable.
