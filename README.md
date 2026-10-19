@@ -1,5 +1,14 @@
 # x7ctl — Raspberry Pi Sound Blaster X7
 
+## Current Office volume setup — restored 2026-10-19
+
+At the owner's request, Office uses PipeWire stream volume again. AirPlay adjusts
+its software stream; the X7 hardware volume/HomeKit control is separate. The
+active receiver config is `config/office-shairport-pipewire.conf`. The live
+WirePlumber `office-direct-alsa.conf` override was removed. Direct ALSA files
+are retained only as historical reference. USB light switching remains removed.
+
+
 ## Current setup — 2026-10-19
 
 Office now uses direct ALSA output and the X7's native `Speaker` volume/mute.
