@@ -1,5 +1,20 @@
 # x7ctl — Raspberry Pi Sound Blaster X7
 
+## Current setup — 2026-10-19
+
+Office now uses direct ALSA output and the X7's native `Speaker` volume/mute.
+AirPlay volume therefore controls the output device, rather than a separate
+PipeWire stream level. Install `config/office-shairport-alsa.conf` as
+`/etc/shairport-sync.conf` and `config/office-x7-direct-alsa.conf` under
+`~/.config/wireplumber/wireplumber.conf.d/` so PipeWire does not hold the card.
+The starting hardware-volume ceiling is -20 dB. The PCM closes when idle.
+Native EQ/SBX settings were not changed; the prior flat software EQ is bypassed.
+The HomeKit/API hardware mixer remains available, but source slider feedback
+is not guaranteed. Live AirPlay volume movement is pending owner confirmation.
+
+The PipeWire setup described below is retained as historical/rollback reference.
+
+
 Configuration and control tools for maxonary's Office AirPlay receiver and Creative
 Sound Blaster X7 (USB VID 041e, PID 323a). Private infrastructure repository.
 No Katana configuration or power-management changes are included.
